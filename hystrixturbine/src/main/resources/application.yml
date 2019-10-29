@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: hystrix-turbine
+server:
+  port: 8092
+
+security:
+  basic:
+    enabled: false
+turbine:
+  aggregator:
+  # 指定聚合哪些集群， 多个使用"，"分割，默认为default。 可以使用http:// .../turbine、.stream?cluster={clusterConfig 之一} 访问
+    cluster-config:  default
+   # 配置Eureka中的serviceId 列表， 表明监控哪些服务
+  app-config: feign-with-hystrix-stream, movie-ribbon-with-hystrix
+  # 1、cluster-name-expression 指定集群名称，默认表达式APPName； 此时： turbine.aggregator.clusterConfig需要配置想要监控的应用名称。
+    # 2、当cluster-name-expression: default 时， turbine.aggregator.cluster-config 可以不写，因为默认就是 default
+    # 3、当 cluster-name-expression: metadate['cluster'] 时，假设想要监控的应用配置eureka.instance.metadata-map.cluster:ABC, 则需要配置，同时 turbine-aggregator-cluster-config ABC
+  cluster-name-expression: new String("default")
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://peer1:8762/eureka/, http://peer2:8763/eureka
+  instance:
+    prefer-ip-address: true
+logging:
+  level: info

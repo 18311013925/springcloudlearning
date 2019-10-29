@@ -1,0 +1,21 @@
+server:
+  port: 8093
+spring:
+  application:
+    name: feign-with-hystrix-stream
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://peer1:8762/eureka/,http://peer2:8763/eureka
+  instance:
+    prefer-ip-address: false   # 设置为false 或者不设置，否则将会造成在单个主机上测试， Turbine 只显示一个图表的情况
+    hostname: mac2
+
+
+# 启用hystrix 断容器
+feign:
+  hystrix:
+    enabled: true

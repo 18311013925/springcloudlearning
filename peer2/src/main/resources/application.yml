@@ -1,0 +1,20 @@
+server:
+  port: 8763    #  指定该Eureka 端口
+
+spring:
+#  profiles:
+#    active: peer2
+  application:
+      name: peer1
+
+logging:
+  level: info
+
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://peer1:8762/eureka/

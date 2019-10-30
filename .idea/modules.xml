@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/consumermovie/consumer-movie.iml" filepath="$PROJECT_DIR$/consumermovie/consumer-movie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consumermoviefeign/consumer-movie-feign.iml" filepath="$PROJECT_DIR$/consumermoviefeign/consumer-movie-feign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consumermoviefeignwithhystrixstream/consumer-movie-feign-with-hystrix-stream.iml" filepath="$PROJECT_DIR$/consumermoviefeignwithhystrixstream/consumer-movie-feign-with-hystrix-stream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/consumermovieribbonwithhystrix/consumer-movie-ribbon-with-hystrix.iml" filepath="$PROJECT_DIR$/consumermovieribbonwithhystrix/consumer-movie-ribbon-with-hystrix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurekaClient/eureka-Client.iml" filepath="$PROJECT_DIR$/eurekaClient/eureka-Client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurekaServer/eurekaServer.iml" filepath="$PROJECT_DIR$/eurekaServer/eurekaServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hystrixdashboard/hystrix-dashboard.iml" filepath="$PROJECT_DIR$/hystrixdashboard/hystrix-dashboard.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hystrixturbine/hystrix-turbine.iml" filepath="$PROJECT_DIR$/hystrixturbine/hystrix-turbine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/peer1/peer1.iml" filepath="$PROJECT_DIR$/peer1/peer1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/peer2/peer2.iml" filepath="$PROJECT_DIR$/peer2/peer2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/provideruser/provider-user.iml" filepath="$PROJECT_DIR$/provideruser/provider-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-learning.iml" filepath="$PROJECT_DIR$/spring-cloud-learning.iml" />
+    </modules>
+  </component>
+</project>

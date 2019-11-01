@@ -1,0 +1,18 @@
+server:
+  port: 8094
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          # 配置 git 仓库的地址
+          uri: https://github.com/18311013925/configServer.git
+          # git仓库地址的相对地址，可以配置多个，用,分隔
+          search-paths: spring-cloud-config   # '{application}'
+          # git 仓库账号
+          username: 949168418@qq.com
+          # git 仓库密码
+          password: 741852@lizhi
+

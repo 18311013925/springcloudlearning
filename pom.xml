@@ -29,6 +29,10 @@
         <module>hystrixdashboard</module>
         <module>hystrixturbine</module>
         <module>consumermoviefeignwithhystrixstream</module>
+        <module>configserver</module>
+        <module>configclient</module>
+        <module>configservereureka</module>
+        <module>configclienteureka</module>
     </modules>
 
     <dependencyManagement>
@@ -101,6 +105,28 @@
             <artifactId>spring-cloud-starter-hystrix</artifactId>
         </dependency>
 
+        <!--&lt;!&ndash; 分布式系统中外部化配置服务器和客户端 &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-config-server</artifactId>-->
+        <!--</dependency>-->
+
+        <!--客户端依赖的包-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-web</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.cloud</groupId>-->
+            <!--<artifactId>spring-cloud-starter-config</artifactId>-->
+        <!--</dependency>-->
+
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
 
     </dependencies>
 

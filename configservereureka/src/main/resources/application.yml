@@ -1,0 +1,21 @@
+server:
+  port: 8096
+spring:
+  application:
+    name: config-server-eureka
+  cloud:
+    config:
+      server:
+        git:
+          # 配置 git 仓库的地址
+          uri: https://github.com/18311013925/configServer.git
+          # git仓库地址的相对地址，可以配置多个，用,分隔 # '{application}'
+          search-paths: spring-cloud-config
+          # git 仓库账号
+          username: 949168418@qq.com
+          # git 仓库密码
+          password: 741852@lizhi
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8762/eureka/,http://peer2:8763/eureka

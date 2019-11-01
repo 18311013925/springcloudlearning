@@ -9,15 +9,10 @@
 .settings
 /target
 classes
-custom.cfg
+
 md5sum
 target/
 tmp/
-com.haizhi.web.apiserver/src/develop/bin/source.sh
-test-config
-online-config
-security.*
-dump.rdb
 .ehcache-diskstore.lock
 *.ipr
 *.iws

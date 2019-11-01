@@ -11,11 +11,17 @@ eureka:
   instance:
     hostname: gataway
     # 下面整个树都是非必须的，如果不配置，将默认使用 http://GATEWAY:GATEWAY_PORT/想要访问的Eureka 服务id的小写， 路由到： http://想要访问的Eureka服务id 的小写：该服务多扣
+# ===============================配置方式一===============================
+#zuul:
+#  routes:
+#    movie:  # 随便写，在zuul 上面唯一即可； 这里的值 = service-id 时， service-id可以不写
+#      path: /movie/**   # 想要映射的路径
+#      serviceId: consumer-movie-ribbon   # eureka中的serviceId
+#      #需要忽视的服务（配置后将不会路由）
+#  ignored-services: provider-user
+# ===============================配置方式二===============================
+
 zuul:
   routes:
-    movie:  # 随便写，在zuul 上面唯一即可； 这里的值 = service-id 时， service-id可以不写
-      path: /movie/**   # 想要映射的路径
-      serviceId: consumer-movie-ribbon   # eureka中的serviceId
-      #需要忽视的服务（配置后将不会路由）
+    consumer-movie-ribbon: movie/**
   ignored-services: provider-user
-

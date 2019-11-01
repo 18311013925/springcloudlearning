@@ -1,0 +1,24 @@
+server:
+  port: 8099
+
+spring:
+  application:
+    name: api-gateway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8762/eureka/,http://peer2:8763/eureka
+  instance:
+    hostname: gataway
+    # 下面整个树都是非必须的，如果不配置，将默认使用 http://GATEWAY:GATEWAY_PORT/想要访问的Eureka 服务id的小写， 路由到： http://想要访问的Eureka服务id 的小写：该服务多扣
+zuul:
+  routes:
+#    user:   # 随便写，在zuul 上面唯一即可； 这里的值 = service-id 时， service-id可以不写
+#      path: /user/**   # 想要映射的路径
+#      srviceId: provider-user   # eureka中的serviceId
+#  #需要忽视的服务（配置后将不会路由）
+    movie:
+      path: /movie/**
+      serviceId: consumer-movie-ribbon
+  ignored-services: provider-user
+

@@ -33,6 +33,8 @@
         <module>configclient</module>
         <module>configservereureka</module>
         <module>configclienteureka</module>
+        <module>apigateway</module>
+        <module>apigatewayfilter</module>
     </modules>
 
     <dependencyManagement>

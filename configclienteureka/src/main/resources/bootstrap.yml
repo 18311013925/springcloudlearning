@@ -6,8 +6,8 @@ spring:
       profile: dev
       label: test
       discovery:
-        enabled: true
-        service-id: config-server-eureka
+        enabled: true   # 默认false,设为true表示使用注册中心中的configserver配置，而不是自己配置的configserver的uri
+        service-id: config-server-eureka  # 指定config server 在服务发现中的serviceId, 默认为：configServer
 eureka:
   client:
     service-url:

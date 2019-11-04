@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 /**
  * @author: lizhi
  * @Date: 2019/10/24 17:56
@@ -18,5 +20,9 @@ public class RibbonService {
 
     public User findById(Long id) {
         return this.restTemplate.getForObject("http://provider-user/" + id, User.class);
+    }
+
+    public List<User> queryUserList() {
+        return this.restTemplate.getForObject("http://provider-user/query/users", List.class);
     }
 }

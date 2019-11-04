@@ -22,10 +22,15 @@ public class AccessFilter extends ZuulFilter{
 
     /**
      * flterType: 过滤器的类型， 它决定过滤器在请求的哪个生命周期中执行。 这里 定义为pre, 代表会在请求被路由之前执行。
+     * 1、pre: 可以在请求被路由之前调用。
+     * 2、routing: 在路由请求时被调用。
+     * 3、post: 在 routing 和 error 过滤器之后被调用。
+     * 4、error: 处理请求时发生错误时被调用。
      * @return
      */
     @Override
     public String filterType() {
+        log.info("请求前: pre");
         return "pre";
     }
 

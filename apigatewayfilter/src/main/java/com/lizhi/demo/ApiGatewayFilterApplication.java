@@ -1,6 +1,7 @@
 package com.lizhi.demo;
 
 import com.lizhi.demo.filter.AccessFilter;
+import com.lizhi.demo.filter.ReturnFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
@@ -22,6 +23,11 @@ public class ApiGatewayFilterApplication {
     @Bean
     public AccessFilter accessFilter() {
         return new AccessFilter();
+    }
+
+    @Bean
+    public ReturnFilter returnFilter() {
+        return new ReturnFilter();
     }
 
     /**

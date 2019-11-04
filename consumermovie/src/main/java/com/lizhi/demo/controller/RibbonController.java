@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @author: lizhi
  * @Date: 2019/10/24 18:03
@@ -20,5 +22,10 @@ public class RibbonController {
     @GetMapping("ribbon/{id}")
     private User findById(@PathVariable Long id) {
         return this.ribbonService.findById(id);
+    }
+
+    @GetMapping("ribbon/all/user")
+    private List<User> queryUserList() {
+        return this.ribbonService.queryUserList();
     }
 }

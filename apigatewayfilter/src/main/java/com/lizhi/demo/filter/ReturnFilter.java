@@ -54,11 +54,7 @@ public class ReturnFilter extends ZuulFilter {
         log.info("post ruturn");
         RequestContext context = RequestContext.getCurrentContext();
         HttpServletResponse response = context.getResponse();
-
-        Collection<String> headerNames = response.getHeaderNames();
         int status = response.getStatus();
-        int bufferSize = response.getBufferSize();
-
         InputStream dataStream = context.getResponseDataStream();
         try {
             String body = StreamUtils.copyToString(dataStream, Charset.forName("UTF-8"));

@@ -25,3 +25,13 @@ zuul:
   routes:
     consumer-movie-ribbon: movie/**
   ignored-services: provider-user
+
+  # ===============================其他的一些规则===============================
+  # 忽略表达式
+  # ignored-patterns: /**/movie/**
+  # 路由前缀
+  prefix: /api
+
+  #  对于代理前缀会默认从路径中移除，我们可以通过设置
+  #  zuul.stripPrefix= false 来关闭该移除代理前缀的动作，也可以通过 zuul.routes. <route>.strip-prefix=true 来对指定路由关闭移除代理前缀的动作。
+  strip-prefix: false

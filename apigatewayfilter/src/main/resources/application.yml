@@ -24,7 +24,7 @@ eureka:
 zuul:
   routes:
     consumer-movie-ribbon: movie/**
-#  ignored-services: provider-user
+  ignored-services: provider-user
 
   # ===============================其他的一些规则===============================
   # 忽略表达式

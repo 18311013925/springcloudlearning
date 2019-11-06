@@ -30,6 +30,11 @@ public class ApiGatewayFilterApplication {
         return new ReturnFilter();
     }
 
+//    @Bean
+//    public ThrowExceptionFilter throwExceptionFilter() {
+//        return new ThrowExceptionFilter();
+//    }
+
     /**
      * 自定义路由映射规则
      *  默认情况下，Zuul自动为服务创建的路由表

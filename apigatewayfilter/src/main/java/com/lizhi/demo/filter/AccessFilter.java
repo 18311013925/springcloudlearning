@@ -6,6 +6,7 @@ import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cloud.netflix.zuul.util.RequestUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -55,10 +56,21 @@ public class AccessFilter extends ZuulFilter{
 
     /**
      * run: 过滤器的具体逻辑。 这里我们通过ctx.setSendZuulResponse(false) 令zuul过滤该请求， 不对其进行路由， 然后通过 ctx.setResponseStatus­ Code(401)设置了其返回的错误码， 当然也可以进 一 步优化我们的返回， 比如， 通 过ctx.se七ResponseBody(body)对返回的body内容进行编辑等。
+     *
+     *
      * @return
      */
     @Override
     public Object run() {
+        /**
+         *  {@link org.springframework.cloud.netflix.zuul.filters.pre.ServletDetectionFilter#filterOrder()}
+         *  ServletDetectionFilter:主要用来检测当前请求是通过Spring的DispatcherServlet 处理运行的，还是通过Zuu1Servle七来处理运行的
+         */
+        boolean dispatcherServletRequest = RequestUtils.isDispatcherServletRequest();
+        boolean zuulServletRequest = RequestUtils.isZuulServletRequest();
+
+        log.info("dispatcherServletRequest:{} zuulServletRequest {}", dispatcherServletRequest, zuulServletRequest);
+
         RequestContext currentContext = RequestContext.getCurrentContext();
         HttpServletRequest request = currentContext.getRequest();
         log.info("send {} request to {} ", request.getMethod(), request.getRequestURL().toString());

@@ -15,6 +15,19 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zuul</artifactId>
         </dependency>
+        <!--json 序列化依赖-->
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba</groupId>-->
+            <!--<artifactId>fastjson</artifactId>-->
+            <!--<version>1.2.60</version>-->
+        <!--</dependency>-->
+
+        <!--&lt;!&ndash; 是一个模板引擎， 用于我们设置错误输出模板&ndash;&gt;-->
+
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-freemarker</artifactId>-->
+        <!--</dependency>-->
     </dependencies>
 
 </project>

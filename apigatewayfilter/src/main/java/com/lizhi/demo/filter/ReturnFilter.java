@@ -23,10 +23,11 @@ import java.util.Map;
 /**
  * @author: lizhi
  * @Date: 2019/11/4 11:10
- * @Description:  请求返回的Filter
+ * @Description: 请求返回的Filter
  */
 public class ReturnFilter extends ZuulFilter {
     private static final Logger log = LoggerFactory.getLogger(ReturnFilter.class);
+
     @Override
     public String filterType() {
         log.info("请求完成返回： post");
@@ -40,13 +41,15 @@ public class ReturnFilter extends ZuulFilter {
 
     @Override
     public boolean shouldFilter() {
-        RequestContext currentContext = RequestContext.getCurrentContext();
-        Boolean filterResult = (Boolean) currentContext.get("isSuccess");
+        RequestContext ctx = RequestContext.getCurrentContext();
+        Boolean filterResult = (Boolean) ctx.get("isSuccess");
+//        ctx.contains("error.status_code")  && !ctx.getBoolean(SEND_ERROR_FILTER_RAN, false);
         return true;
     }
 
     /**
      * 对返回的结果进行包装
+     *
      * @return
      */
     @Override
@@ -56,22 +59,25 @@ public class ReturnFilter extends ZuulFilter {
         HttpServletResponse response = context.getResponse();
         int status = response.getStatus();
         InputStream dataStream = context.getResponseDataStream();
+        Result result = new Result();
         try {
-            String body = StreamUtils.copyToString(dataStream, Charset.forName("UTF-8"));
             ObjectMapper objectMapper = new ObjectMapper();
-            Object object = objectMapper.readValue(body, Object.class);
-            Result result = new Result();
             result.setStatus(status);
             if (status == HttpStatus.OK.value()) {
+                String body = StreamUtils.copyToString(dataStream, Charset.forName("UTF-8"));
+                Object object = objectMapper.readValue(body, Object.class);
                 result.setMessage("ok");
+                result.setData(object);
             } else {
                 result.setMessage("error");
+                result.setData(null);
             }
-            result.setData(object);
+
             context.setResponseBody(objectMapper.writeValueAsString(result));
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         return null;
     }
 }

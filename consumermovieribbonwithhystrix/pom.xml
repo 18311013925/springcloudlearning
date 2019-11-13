@@ -11,5 +11,12 @@
 
     <artifactId>consumer-movie-ribbon-with-hystrix</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>spring-cloud-learning</groupId>
+            <artifactId>provider-user-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

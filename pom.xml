@@ -41,6 +41,7 @@
         <module>common</module>
         <module>sysadmin</module>
         <module>springbooserver</module>
+        <module>provideruserapi</module>
     </modules>
 
     <dependencyManagement>
@@ -153,11 +154,22 @@
             <version>3.1.1</version>
         </dependency>
 
-        <!--Redis缓存-->
+
+        <!-- 数据操作层 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+
+        <!--Redis缓存-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-data-redis</artifactId>-->
+        <!--</dependency>-->
 
     </dependencies>
 

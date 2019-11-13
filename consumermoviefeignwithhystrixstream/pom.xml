@@ -11,4 +11,11 @@
 
     <artifactId>consumer-movie-feign-with-hystrix-stream</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>spring-cloud-learning</groupId>
+            <artifactId>provider-user-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>

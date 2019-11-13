@@ -1,0 +1,9 @@
+server:
+  port: 8104
+
+# actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -16,7 +16,7 @@ import java.util.List;
 public class RibbonService {
 
     @Autowired
-    private RestTemplate restTemplate;
+    private RestTemplate restTemplate ;
 
     public User findById(Long id) {
         return this.restTemplate.getForObject("http://provider-user/" + id, User.class);

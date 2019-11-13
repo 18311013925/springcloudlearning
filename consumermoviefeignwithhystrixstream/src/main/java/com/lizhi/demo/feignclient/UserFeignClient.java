@@ -1,6 +1,7 @@
 package com.lizhi.demo.feignclient;
 
-import com.lizhi.demo.entity.User;
+//import com.lizhi.demo.entity.User;
+import com.lizhi.demo.dto.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.netflix.feign.FeignClient;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 /**
- * 使用@FeignClient 注解的fallback属性，指定fallback 类
+ * 使用@FeignClient 注解的fallback属性，指定fallback 类， fallback 实现服务降级
  * @author lizhi
  */
 @FeignClient(name = "provider-user", fallback =UserFeignClient.HystrixClientFallback.class)

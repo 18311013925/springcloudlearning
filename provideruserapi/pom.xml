@@ -8,14 +8,13 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+    <artifactId>provider-user-api</artifactId>
 
-    <artifactId>provider-user</artifactId>
-
-    <dependencies>
-        <dependency>
-            <groupId>spring-cloud-learning</groupId>
-            <artifactId>provider-user-api</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-    </dependencies>
+    <!--<dependencies>-->
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-web</artifactId>-->
+        <!--</dependency>-->
+    <!--</dependencies>-->
 </project>

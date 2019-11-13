@@ -11,5 +11,11 @@
 
     <artifactId>consumer-movie-feign</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>spring-cloud-learning</groupId>
+            <artifactId>provider-user-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 </project>

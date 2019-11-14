@@ -47,4 +47,9 @@ public class UserCommand extends HystrixCommand<User>{
         user.setAge(0);
         return user;
     }
+
+    @Override
+    protected String getCacheKey() {
+        return super.getCacheKey();
+    }
 }

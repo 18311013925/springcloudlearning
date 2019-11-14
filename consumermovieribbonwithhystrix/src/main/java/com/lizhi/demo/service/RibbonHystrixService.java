@@ -35,7 +35,7 @@ public class RibbonHystrixService {
      * @param id
      * @return 通过id查询的用户
      */
-    @HystrixCommand(fallbackMethod = "fallback")
+    @HystrixCommand(fallbackMethod = "fallback", ignoreExceptions = {NullPointerException.class, ArithmeticException.class})
     public User findById(Long id) {
         return this.restTemplate.getForObject("http://provider-user/{1}", User.class, id);
     }
@@ -46,8 +46,9 @@ public class RibbonHystrixService {
      * @param id
      * @return
      */
-    public User fallback(Long id) {
-        RibbonHystrixService.LOGGER.info("异常发生，进入fallback方法，接收的参数：id = {}", id);
+    public User fallback(Long id, Throwable e) {
+        LOGGER.info("异常发生，进入fallback方法，接收的参数：id = {}", id);
+        LOGGER.info("fallback exception：{}", e.getMessage());
         User user = new User();
         user.setId(-1L);
         user.setUsername("default username");
@@ -144,11 +145,11 @@ public class RibbonHystrixService {
      * @return
      */
     public User toObservable(Long id) {
-/**
- * Cold Observable在没有 “订阅者” 的时候并不会发布时间，
- * 而是进行等待，知道有 “订阅者” 之后才发布事件，所以对于
- * Cold Observable的订阅者，它可以保证从一开始看到整个操作的全部过程。
- */
+        /**
+         * Cold Observable在没有 “订阅者” 的时候并不会发布时间，
+         * 而是进行等待，知道有 “订阅者” 之后才发布事件，所以对于
+         * Cold Observable的订阅者，它可以保证从一开始看到整个操作的全部过程。
+         */
         Observable<User> userObservable = new UserCommand(restTemplate, id).toObservable();
         User user = userObservable.toBlocking().single();
         LOGGER.info("toObservable:{}",user.toString() );

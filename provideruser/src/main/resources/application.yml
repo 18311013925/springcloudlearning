@@ -4,7 +4,7 @@ spring:
   application:
     name: provider-user  # 项目名称尽量用小写
   profiles:
-    active: provider8085 # 通过active 来确定加载那个文件
+    active: provider8084 # 通过active 来确定加载那个文件
 #  jpa:
 #    generate-ddl: false
 #    show-sql: true

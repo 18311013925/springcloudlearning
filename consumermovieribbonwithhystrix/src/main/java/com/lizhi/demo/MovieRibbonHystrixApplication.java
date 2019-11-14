@@ -1,5 +1,6 @@
 package com.lizhi.demo;
 
+import com.netflix.hystrix.strategy.concurrency.HystrixRequestContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -29,6 +30,11 @@ public class MovieRibbonHystrixApplication {
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
+
+//    @Bean
+//    public HystrixRequestContext hystrixRequestContext() {
+//        return HystrixRequestContext.initializeContext();
+//    }
 
     public static void main(String[] args) {
         SpringApplication.run(MovieRibbonHystrixApplication.class, args);

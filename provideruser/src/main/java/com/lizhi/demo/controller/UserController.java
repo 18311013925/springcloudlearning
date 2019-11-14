@@ -27,6 +27,10 @@ public class UserController {
     @GetMapping("/{id}")
     public User findById(@PathVariable Long id) {
         User findOne = this.userRepository.findOne(id);
+        // 测试服务降级，捕获异常
+        if (id == 1) {
+            throw new NullPointerException();
+        }
         return findOne;
     }
     
@@ -42,6 +46,8 @@ public class UserController {
      */
     @GetMapping("/instance-info")
     public ServiceInstance showInfo() {
+        List<String> services = discoveryClient.getServices();
+        List<ServiceInstance> instances = discoveryClient.getInstances("provider-user");
         ServiceInstance localServiceInstance = this.discoveryClient.getLocalServiceInstance();
         return localServiceInstance;
     }

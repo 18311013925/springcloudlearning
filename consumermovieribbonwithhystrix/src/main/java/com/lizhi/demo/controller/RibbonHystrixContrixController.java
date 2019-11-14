@@ -1,6 +1,5 @@
 package com.lizhi.demo.controller;
 
-import com.lizhi.demo.command.UserCommand;
 import com.lizhi.demo.entity.User;
 import com.lizhi.demo.service.RibbonHystrixService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,6 +66,14 @@ public class RibbonHystrixContrixController {
     public User findByIdFeignAsync(@PathVariable Long id) throws ExecutionException, InterruptedException {
         return ribbonHystrixService.asyncHystrixfindById(id);
     }
+
+    /**
+     * observer
+     * @param id
+     * @return
+     * @throws ExecutionException
+     * @throws InterruptedException
+     */
 
     @GetMapping("observer/{id}")
     public User findByIdFeignObserver(@PathVariable Long id) throws ExecutionException, InterruptedException {

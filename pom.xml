@@ -37,8 +37,6 @@
         <module>apigatewayfilter</module>
         <module>rabbitmqhello</module>
         <module>authenticationservice</module>
-        <module>auth</module>
-        <module>common</module>
         <module>sysadmin</module>
         <module>springbooserver</module>
         <module>provideruserapi</module>

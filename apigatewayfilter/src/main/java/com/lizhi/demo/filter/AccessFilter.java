@@ -17,6 +17,8 @@ import java.util.Map;
  * @Date: 2019/11/1 14:50
  * @Description:  通过前置网关实现客户端请求的安全校验和权限控制
  * 我们需要继承ZullFilter 抽象类，并实现它定义的四个抽象函数就可以完成对请求的拦截和过滤
+ *
+ * 相当于一个前置过滤器
  */
 public class AccessFilter extends ZuulFilter{
     private static final Logger log = LoggerFactory.getLogger(AccessFilter.class);

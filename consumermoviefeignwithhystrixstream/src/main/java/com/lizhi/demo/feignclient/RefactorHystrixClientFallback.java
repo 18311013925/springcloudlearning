@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 // 方式一
 //@Component
-//@RequestMapping("/fallback//refactor/api")
+//@RequestMapping("/fallback/refactor/api")
 //public class RefactorHystrixClientFallback implements RefactorUserService{
 //private static final Logger logger = LoggerFactory.getLogger(RefactorHystrixClientFallback.class);
 //    @Override

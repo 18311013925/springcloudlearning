@@ -3,8 +3,8 @@ spring:
     name: config-client-eureka
   cloud:
     config:
-      profile: dev
-      label: test
+      profile: dev   # 配置文件的环境
+      label: test   # git的那个分支
       discovery:
         enabled: true   # 默认false,设为true表示使用注册中心中的configserver配置，而不是自己配置的configserver的uri
         service-id: config-server-eureka  # 指定config server 在服务发现中的serviceId, 默认为：configServer

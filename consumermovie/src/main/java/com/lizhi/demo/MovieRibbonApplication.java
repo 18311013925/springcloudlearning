@@ -26,7 +26,9 @@ public class MovieRibbonApplication {
     /**
      * 实例化restTemplate
      * 使用@LoadBalanced 注解开启负载均衡能力
-     * @return  restTemplate
+     * @return  restTemplate  RestTemplate是Spring提供的用于访问Rest服务的客户端，RestTemplate提供了多种便捷访问远程Http服务的方法,
+     * 能够大大提高客户端的编写效率。
+     * 该对象会使用 Ribbon 的自动化配置， 同时通过配置 @LoadBalanced 还能够开启客户端负载均衡
      */
     @Bean
     @LoadBalanced

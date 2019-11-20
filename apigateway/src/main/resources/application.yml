@@ -11,6 +11,7 @@ eureka:
   instance:
     hostname: gataway
     # 下面整个树都是非必须的，如果不配置，将默认使用 http://GATEWAY:GATEWAY_PORT/想要访问的Eureka 服务id的小写， 路由到： http://想要访问的Eureka服务id 的小写：该服务多扣
+    # 面向服务的路由方式
 zuul:
   routes:
 #    user:   # 随便写，在zuul 上面唯一即可； 这里的值 = service-id 时， service-id可以不写
@@ -22,3 +23,7 @@ zuul:
       serviceId: consumer-movie-ribbon
   ignored-services: provider-user
 
+    # 传统的路由方式 所有符合/api-a-url/**规则的访问都 将被路 由 转 发到http://localhost:8088/地址上，传统 路由的配置方式对于我们来说并不友好
+#  api-a-url:
+#    path: /api-a-url/**
+#    url: http://localhost:8088

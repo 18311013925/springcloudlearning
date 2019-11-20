@@ -16,6 +16,4 @@ eureka:
     fetch-registry: true   # 单机情况下设置为false
     service-url:
       defaultZone: http://peer2:8763/eureka/  # 将自己注册到eureka2这个Eureka上面去
-logging:
-  level: info
 

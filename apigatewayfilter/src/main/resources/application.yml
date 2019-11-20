@@ -16,7 +16,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://peer1:8762/eureka/,http://peer2:8763/eureka
+      defaultZone: http://peer1:8762/eureka/,http://peer2:8763/eureka     # 与eureka 通信
   instance:
     hostname: gataway
     # 下面整个树都是非必须的，如果不配置，将默认使用 http://GATEWAY:GATEWAY_PORT/想要访问的Eureka 服务id的小写， 路由到： http://想要访问的Eureka服务id 的小写：该服务多扣
@@ -34,6 +34,8 @@ zuul:
   routes:
     consumer-movie-ribbon: movie/**
   ignored-services: provider-user
+
+
 
   # ===============================其他的一些规则===============================
   # 忽略表达式

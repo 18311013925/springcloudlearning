@@ -23,7 +23,9 @@ import java.util.Map;
 /**
  * @author: lizhi
  * @Date: 2019/11/4 11:10
- * @Description: 请求返回的Filter
+ * @Description:包装响应发送给客户端的的的Filter，
+ *
+ * 相当于一个 后置过滤器
  */
 public class ReturnFilter extends ZuulFilter {
     private static final Logger log = LoggerFactory.getLogger(ReturnFilter.class);

@@ -1,8 +1,0 @@
-DROP TABLE `user` IF EXISTS;
-CREATE TABLE USER (
-	id BIGINT(20)   unsigned NOT NULL AUTO_INCREMENT,
-	username VARCHAR(255),
-	age INT ,
-	PRIMARY KEY (id)
-);
-

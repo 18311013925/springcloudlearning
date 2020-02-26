@@ -35,7 +35,7 @@ public class RibbonHystrixService {
      * @param id
      * @return 通过id查询的用户
      */
-    @HystrixCommand(fallbackMethod = "fallback", ignoreExceptions = {NullPointerException.class, ArithmeticException.class})
+    @HystrixCommand(fallbackMethod = "fallback")
     public User findById(Long id) {
         return this.restTemplate.getForObject("http://provider-user/{1}", User.class, id);
     }

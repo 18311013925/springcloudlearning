@@ -1,19 +1,5 @@
-server:
-  port: 8762    #  指定该Eureka 端口
-
 spring:
 #  profiles:
-#    active: peer1
+#    active: peer8763
   application:
     name: eureka-server
-
-eureka:
-  instance:
-    hostname: peer1
-#    prefer-ip-address: false
-  client:
-    register-with-eureka: true    # 单机情况下设置为false
-    fetch-registry: true   # 单机情况下设置为false
-    service-url:
-      defaultZone: http://peer2:8763/eureka/  # 将自己注册到eureka2这个Eureka上面去
-

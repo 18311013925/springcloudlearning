@@ -16,7 +16,6 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-
     <modules>
         <module>eurekaServer</module>
         <module>peer1</module>
@@ -33,13 +32,12 @@
         <module>configclient</module>
         <module>configservereureka</module>
         <module>configclienteureka</module>
-        <module>apigateway</module>
-        <module>apigatewayfilter</module>
         <module>rabbitmqhello</module>
         <module>authenticationservice</module>
         <module>sysadmin</module>
         <module>springbooserver</module>
         <module>provideruserapi</module>
+        <module>springcloudzuul</module>
     </modules>
 
     <dependencyManagement>

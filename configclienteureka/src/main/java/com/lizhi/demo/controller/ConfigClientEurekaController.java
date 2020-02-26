@@ -31,4 +31,8 @@ public class ConfigClientEurekaController {
     public String hello2() {
         return environment.getProperty("profile", "undefined");
     }
+
+    public static void main(String[] args) {
+        System.out.println( 5 >> 1);
+    }
 }

@@ -19,3 +19,22 @@ provideruser 服务提供者，测试集群情况，需要先修改配置文件�
     Turbin:
         hystrixturbine
     
+    
+本地的host 文件配置
+
+    ##
+    # Host Database
+    #
+    # localhost is used to configure the loopback interface
+    # when the system is booting.  Do not change this entry.
+    ##
+    127.0.0.1       localhost peer1 peer2 mac1 mac2 config-server gateway
+    255.255.255.255 broadcasthost
+    ::1             localhost
+    0.0.0.0 account.jetbrains.com
+    103.235.225.42 package.registry
+    nexus.weibangong.site nexus.weibangong.me
+    103.235.226.57 nexus.weibangong.me
+    weibangong.site  weibangong.me
+    0.0.0.0 account.jetbrains.com
+    ~

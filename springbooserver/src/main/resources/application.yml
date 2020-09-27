@@ -1,9 +1,0 @@
-server:
-  port: 8104
-
-# actuator, 服务监控，检查服务是否健康
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"

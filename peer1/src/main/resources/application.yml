@@ -1,5 +1,0 @@
-spring:
-#  profiles:
-#    active: peer8763
-  application:
-    name: eureka-server
